@@ -36,6 +36,8 @@ Typescript
 
 Material-ui
 
+Apollo Graphql
+
 ## Available Scripts
 
 In the project directory, you can run:
