@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'MontserratBold';
+  src: local('MontserratBold'),
+    url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'),
+    url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Lobster 1.4', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Lobster 1.4';
+  src: local('Lobster 1.4'),
+    url('./assets/fonts/Lobster\ 1.4.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'SeaweedScript';
+  src: url('./assets/fonts/SeaweedScript-Regular.ttf');
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/Helvetica.ttf');
+}

@@ -1,0 +1,16 @@
+version: "3"
+services:
+
+  website:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: gf:1.0.0
+    ports:
+      - "8081:5000"
+    restart: always
+    networks:
+      - gf_frontend_net
+
+networks:
+  gf_frontend_net:
