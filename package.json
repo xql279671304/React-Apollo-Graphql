@@ -24,7 +24,7 @@
     "apollo-link-error": "^1.1.13",
     "apollo-link-http": "^1.5.17",
     "check-password-strength": "^1.0.8",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-transformer-validator": "^0.9.0",
     "class-validator": "^0.12.2",
     "enum-values": "^1.2.1",
