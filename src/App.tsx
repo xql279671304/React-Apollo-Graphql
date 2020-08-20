@@ -4,11 +4,11 @@ import './App.css'
 import { AppRouter } from './routers/AppRouter'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
-import gfashionThemeMemo from './styles/gfashionThemeMemo'
+import themeMemo from './styles/themeMemo'
 
 function App() {
   return (
-    <ThemeProvider theme={gfashionThemeMemo()}>
+    <ThemeProvider theme={themeMemo()}>
       <CssBaseline />
       <AppRouter />
     </ThemeProvider>

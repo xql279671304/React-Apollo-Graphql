@@ -1,12 +1,12 @@
 import React from 'react'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import createGfashionTheme from './createGfashionTheme'
+import createTheme from './createTheme'
 
 export default () => {
   const isDarkModePrefered = useMediaQuery('(prefers-color-scheme: dark)')
 
   return React.useMemo(() => {
-    return createGfashionTheme({
+    return createTheme({
       appDrawer: { width: 20 },
       palette: {
         primary: {

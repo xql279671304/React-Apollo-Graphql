@@ -10,7 +10,7 @@ services:
       - "8081:5000"
     restart: always
     networks:
-      - gf_frontend_net
+      - frontend_net
 
 networks:
-  gf_frontend_net:
+  frontend_net:

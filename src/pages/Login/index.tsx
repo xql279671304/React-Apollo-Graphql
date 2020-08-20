@@ -11,14 +11,13 @@ import {
 } from '@material-ui/core'
 import { keyPathMirror } from 'key-path-mirror'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import { useLazyQuery } from '@apollo/react-hooks'
+import { useLazyQuery } from '@apollo/client'
 import { useTranslation } from 'react-i18next'
 import { I18N, I18N_NS } from '../_i18n'
 import Language from '../../components/Language'
 import { useHistory } from 'react-router-dom'
 import { LOGIN_DATA, GET_LOGIN } from './gqls'
 import Loading from '../../components/Loading'
-import { useFormValidation } from '../../utils/formValidation/useFormValidation'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -71,7 +70,6 @@ export function Login() {
   const formInitData = new LOGIN_DATA()
   const fields = keyPathMirror(formInitData)
   const [formData, setFormData] = React.useState<LOGIN_DATA>(formInitData)
-  const { validateFormSync, getFieldValidationProps } = useFormValidation(LOGIN_DATA)
   const [alertState, setAlertState] = React.useState({
     open: false,
     message: ''
@@ -95,7 +93,6 @@ export function Login() {
   }
 
   const submitLogin = () => {
-    if (!validateFormSync(formData)) return false
     getLogin({
       variables: formData
     })
@@ -124,7 +121,6 @@ export function Login() {
                 label={t(I18N.login.user_name)}
                 value={formData.account||''}
                 onChange={handleInput}
-                {...getFieldValidationProps(fields.account)}
               />
               <TextField
                 className="textField"
@@ -134,7 +130,6 @@ export function Login() {
                 type="password"
                 value={formData.password||''}
                 onChange={handleInput}
-                {...getFieldValidationProps(fields.password)}
               />
             </form>
             <Divider variant="inset" />

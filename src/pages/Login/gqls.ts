@@ -1,15 +1,8 @@
 import gql from 'graphql-tag'
-import {IsNotEmpty} from 'class-validator'
 
 export class LOGIN_DATA {
-  @IsNotEmpty({
-    message: '必填项'
-  })
   password!: string;
 
-  @IsNotEmpty({
-    message: '必填项'
-  })
   account!: string
 }
 
