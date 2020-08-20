@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 // import { Management, HOME_PAGE_URL } from '../pages'
 import { Login, Login_PAGE_URL } from '../pages/Login'
 import MainFrame from '../components/MainFrame'
+import { Home, Home_PAGE_URL } from '../pages/Home'
 
 export function AppRouter() {
   const { i18n } = useTranslation()
@@ -27,7 +28,7 @@ export function AppRouter() {
       <Switch>
         <Route exact path={Login_PAGE_URL} component={Login} />
         <MainFrame>
-          <div>DEMO HOME</div>
+          <Route path={Home_PAGE_URL} component={Home}></Route>
         </MainFrame>
         <Redirect to={Login_PAGE_URL} />
       </Switch>

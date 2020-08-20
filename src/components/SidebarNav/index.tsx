@@ -27,12 +27,12 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'block',
       width: '4rem',
       margin: 'auto',
-      background: '#fff',
       borderRadius: '6px'
     },
     logo: {
       display: 'block',
-      padding: theme.spacing(1, 0)
+      padding: theme.spacing(1, 0),
+      backgroundColor: '#fff'
     }
   })
 )
@@ -41,7 +41,7 @@ const SidebarNav = () => {
   const classes = useStyles()
   const dispatch = useDispatch()
   const icon2 = require('./icon-2.png')
-  const icon3 = require('./icon-3.png')
+  const icon3 = require('./icon-1.png')
   const logo = require('./logo512.png')
 
   const setNavTop = (type: string) => {

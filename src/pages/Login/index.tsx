@@ -86,7 +86,7 @@ export function Login() {
   const [getLogin, { loading: loginLoading, data: loginInfo }] = useLazyQuery(GET_LOGIN)
 
   if (loginInfo) {
-    history.push('/')
+    history.push('/home')
   }
 
   const handleAlertClose = () => {
