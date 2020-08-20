@@ -18,6 +18,7 @@ import Language from '../../components/Language'
 import { useHistory } from 'react-router-dom'
 import { LOGIN_DATA, GET_LOGIN } from './gqls'
 import Loading from '../../components/Loading'
+import { object, string } from 'yup'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -74,6 +75,13 @@ export function Login() {
     open: false,
     message: ''
   })
+
+  const loginSchema = object({
+    account: string()
+      .required(),
+    password: string()
+      .required()
+  })
   
   const [getLogin, { loading: loginLoading, data: loginInfo }] = useLazyQuery(GET_LOGIN)
 
@@ -92,10 +100,19 @@ export function Login() {
     setFormData({ ...formData, [key]: value })
   }
 
-  const submitLogin = () => {
-    getLogin({
-      variables: formData
-    })
+  const submitLogin = async () => {
+    let valid = false
+    try {
+      await loginSchema.validate(formData)
+      valid = true
+    } catch(err) {
+      console.log(err)
+    }
+    if (valid) {
+      getLogin({
+        variables: formData
+      })
+    }
   }
 
   return (
